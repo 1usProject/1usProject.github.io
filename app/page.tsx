@@ -1,29 +1,49 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./page.module.css";
+import { IonIcon } from "@ionic/react";
+import { logoGithub, logoTwitter, logoDiscord, logoInstagram } from  "ionicons/icons";
 
 export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
         <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
+          Coming Soon. Stay Tuned.
         </p>
-        <div>
+        <div style={{ display:"flex", fontSize:"18px" }}>
           <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+            href=""
             target="_blank"
             rel="noopener noreferrer"
+            style={{ padding:"0px 6px" }}
           >
-            By{" "}
-            <Image
-              src="vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
+            <IonIcon icon={logoDiscord} />
+          </a>
+          <a
+            href=""
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ padding:"0px 6px" }}
+          >
+            <IonIcon icon={logoTwitter} />
+          </a>
+          <a
+            href=""
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ padding:"0px 6px" }}
+          >
+            <IonIcon icon={logoInstagram} />
+          </a>
+          <a
+            href="https://github.com/1usProject"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ padding:"0px 6px" }}
+          >
+            <IonIcon icon={logoGithub} />
           </a>
         </div>
       </div>
@@ -31,10 +51,10 @@ export default function Home() {
       <div className={styles.center}>
         <Image
           className={styles.logo}
-          src="next.svg"
-          alt="Next.js Logo"
+          src="1us.png"
+          alt="1us Logo"
           width={180}
-          height={37}
+          height={180}
           priority
         />
       </div>
@@ -47,9 +67,9 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2>
-            Docs <span>-&gt;</span>
+            Chatulus <span>-&gt;</span>
           </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
+          <p>Customizable messaging platform you can trust.</p>
         </a>
 
         <a
@@ -59,9 +79,9 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2>
-            Learn <span>-&gt;</span>
+            ReactiveIDE <span>-&gt;</span>
           </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
+          <p>Next-generation IDE. More than just build apps.</p>
         </a>
 
         <a
@@ -71,9 +91,9 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2>
-            Templates <span>-&gt;</span>
+            1usOS <span>-&gt;</span>
           </h2>
-          <p>Explore the Next.js 13 playground.</p>
+          <p>Customizable next-generation operating system. I use Arch btw.</p>
         </a>
 
         <a
@@ -83,10 +103,10 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2>
-            Deploy <span>-&gt;</span>
+            What's Next? <span>-&gt;</span>
           </h2>
           <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
+            Tell us your idea if you have an interesting project.
           </p>
         </a>
       </div>
