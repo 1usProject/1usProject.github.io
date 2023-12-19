@@ -14,24 +14,21 @@ export default function Home() {
         </p>
         <div style={{ display:"flex", fontSize:"18px" }}>
           <a
-            href=""
-            target="_blank"
+            href="#"
             rel="noopener noreferrer"
             style={{ padding:"0px 6px" }}
           >
             <IonIcon icon={logoDiscord} />
           </a>
           <a
-            href=""
-            target="_blank"
+            href="#"
             rel="noopener noreferrer"
             style={{ padding:"0px 6px" }}
           >
             <IonIcon icon={logoTwitter} />
           </a>
           <a
-            href=""
-            target="_blank"
+            href="#"
             rel="noopener noreferrer"
             style={{ padding:"0px 6px" }}
           >
@@ -61,7 +58,7 @@ export default function Home() {
 
       <div className={styles.grid}>
         <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          href="https://chatu.1us.ca"
           className={styles.card}
           target="_blank"
           rel="noopener noreferrer"
@@ -73,7 +70,7 @@ export default function Home() {
         </a>
 
         <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          href="https://reactiveide.com"
           className={styles.card}
           target="_blank"
           rel="noopener noreferrer"
@@ -85,7 +82,7 @@ export default function Home() {
         </a>
 
         <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          href="https://os.1us.ca"
           className={styles.card}
           target="_blank"
           rel="noopener noreferrer"
@@ -97,9 +94,8 @@ export default function Home() {
         </a>
 
         <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          href="#"
           className={styles.card}
-          target="_blank"
           rel="noopener noreferrer"
         >
           <h2>
