@@ -1,4 +1,4 @@
-# Next.js Github Pages
+# Landing Page for 1us.ca
 
 Deploy Next.js to Github Pages with Github Actions. [View the deployed app](https://gregrickaby.github.io/nextjs-github-pages/) 🚀
 
