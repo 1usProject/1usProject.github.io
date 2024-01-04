@@ -3,6 +3,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import { useState, useEffect, Fragment, MouseEvent } from "react";
+import { getPreferredColorScheme, applyPreferredColorScheme, toggleColorScheme } from './theme.js';
 import { IonIcon } from "@ionic/react";
 import { Popover, MenuList, MenuItem, ListItemIcon, ListItemText, Typography, Divider } from '@mui/material';
 import { logoGithub, logoTwitter, logoDiscord, logoInstagram, batteryChargingOutline, chevronDownOutline, volumeHigh, bluetooth, wifi } from  "ionicons/icons";
@@ -37,6 +38,10 @@ export default function Home() {
 
   return () => clearInterval(secTimer);
 }, [])
+
+useEffect(() => {
+  applyPreferredColorScheme(getPreferredColorScheme());
+}, []);
 
   return (
     <main className={styles.main}>
@@ -104,7 +109,7 @@ export default function Home() {
             <a href="#" rel="noopener noreferrer" className={styles.descriptionDeskIcon}><IonIcon icon={wifi} /></a>
             <a href="#" rel="noopener noreferrer" className={styles.descriptionDeskIcon}><IonIcon icon={bluetooth} /></a>
             <a href="#" rel="noopener noreferrer" className={styles.descriptionDeskIcon}><IonIcon icon={volumeHigh} /></a>
-            <a href="#" rel="noopener noreferrer" className={styles.descriptionDeskIcon}><IonIcon icon={chevronDownOutline} /></a>
+            <a onClick={toggleColorScheme} rel="noopener noreferrer" className={styles.descriptionDeskIcon}><IonIcon icon={chevronDownOutline} /></a>
             <a href="#" rel="noopener noreferrer" className={styles.descriptionDeskIcon}><p style={{fontSize:"18px"}}>100%</p><IonIcon icon={batteryChargingOutline} /></a>
             <a href="#" rel="noopener noreferrer">{clock}</a>
           </div>
