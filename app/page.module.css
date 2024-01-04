@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
+  padding: 1.5rem;
   min-height: 100vh;
 }
 
@@ -25,13 +25,39 @@
   gap: 0.5rem;
 }
 
-.description p {
+.descriptionBar {
   position: relative;
   margin: 0;
   padding: 1rem;
   background-color: rgba(var(--callout-rgb), 0.5);
   border: 1px solid rgba(var(--callout-border-rgb), 0.3);
   border-radius: var(--border-radius);
+}
+
+.descriptionDesk {
+  position: relative;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  background-color: rgba(var(--callout-rgb), 0.5);
+  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
+  border-radius: var(--border-radius);
+  display:flex;
+  font-size:18px;
+}
+
+.descriptionDesk a {
+  padding:0.5rem 12px;
+  border-radius: var(--border-radius);
+  transition: .25s;
+}
+
+.descriptionDesk a:hover {
+  background-color: rgba(155,155,155,0.2);
+}
+
+.descriptionDeskIcon {
+  font-size: 32px !important;
+  padding: 0 12px !important;
 }
 
 .code {
@@ -41,7 +67,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(25%, auto));
+  grid-template-columns: repeat(5, minmax(20%, auto));
   width: var(--max-width);
   max-width: 100%;
 }
