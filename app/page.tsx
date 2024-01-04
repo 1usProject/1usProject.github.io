@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import styles from "./page.module.css";
-import { useState, useEffect, Fragment } from "react";
+import { useState, useEffect, Fragment, MouseEvent } from "react";
 import { IonIcon } from "@ionic/react";
+import { Popover, MenuList, MenuItem, ListItemIcon, ListItemText, Typography, Divider } from '@mui/material';
 import { logoGithub, logoTwitter, logoDiscord, logoInstagram, batteryChargingOutline, chevronDownOutline, volumeHigh, bluetooth, wifi } from  "ionicons/icons";
 
 export default function Home() {
@@ -13,6 +14,15 @@ export default function Home() {
 
   const [dylandElement, setDylandElement] = useState("Welcome to the Dyland!");
   const [clock, setClock] = useState("");
+
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const menuopen = Boolean(anchorEl);
+  const handleMenuClick = (event: MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
 
   useEffect(() => {
   let secTimer = setInterval( () => {
@@ -36,7 +46,12 @@ export default function Home() {
             <p>Coming Soon. Stay Tuned.</p>
           </div> : 
           <div className={styles.descriptionDesk}>
-            <a href="#" rel="noopener noreferrer">1us</a>
+            <a  
+            aria-controls={menuopen ? 'basic-menu' : undefined}
+            aria-haspopup="true"
+            aria-expanded={menuopen ? 'true' : undefined}
+            onClick={handleMenuClick}
+            rel="noopener noreferrer">1us</a>
             <a href="#" rel="noopener noreferrer">File</a>
             <a href="#" rel="noopener noreferrer">Edit</a>
             <a href="#" rel="noopener noreferrer">View</a>
@@ -94,6 +109,44 @@ export default function Home() {
             <a href="#" rel="noopener noreferrer">{clock}</a>
           </div>
           }
+
+
+      <Popover 
+      id="basic-menu"
+      className={styles.descriptionMenuPopover}
+      open={menuopen}
+      anchorEl={anchorEl}
+      onClose={handleMenuClose}
+      anchorOrigin={{
+       vertical: 'bottom',
+       horizontal: 'left',
+      }}
+      transformOrigin={{
+       vertical: 'top',
+       horizontal: 'left',
+      }}>
+        <MenuList className={styles.descriptionMenu}>
+        <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+          <ListItemText className={styles.descriptionMenuText}>About 1us</ListItemText>
+        </MenuItem>
+        <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+          <ListItemText className={styles.descriptionMenuText}>System Settings</ListItemText>
+          <Typography variant="body2" color="white">
+            ⌘R
+          </Typography>
+        </MenuItem>
+        <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+          <ListItemText className={styles.descriptionMenuText}>Shut Down</ListItemText>
+          <Typography variant="body2" color="white">
+            ⌘W
+          </Typography>
+        </MenuItem>
+        <Divider style={{margin: "0.5rem 0.5rem",background: "rgba(155,155,155,.5)"}} />
+        <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+          <ListItemText className={styles.descriptionMenuText}>Logout User</ListItemText>
+        </MenuItem>
+      </MenuList>
+      </Popover>
         
       </div>
 
