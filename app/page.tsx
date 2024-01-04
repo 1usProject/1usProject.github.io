@@ -8,12 +8,30 @@ import { logoGithub, logoTwitter, logoDiscord, logoInstagram, batteryChargingOut
 
 export default function Home() {
 
-  const [isDesktop, setIsDesktop] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(true);
+  const [showDyland, setShowDyland] = useState(true);
+
+  const [dylandElement, setDylandElement] = useState("Welcome to the Dyland!");
+  const [clock, setClock] = useState("");
+
+  useEffect(() => {
+  let secTimer = setInterval( () => {
+    let date = new Date()
+    let weekday_short = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']
+    let month_short = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+    let formatted_date = weekday_short[date.getDay()] + " " + date.getDate() +  " " + month_short[date.getMonth()] 
+    let formatted_time = date.getHours() + ":" + date.getMinutes().toLocaleString(undefined, {minimumIntegerDigits: 2})
+    let formatted_clock = formatted_date + " " + formatted_time
+    setClock(formatted_clock)
+  },1000)
+
+  return () => clearInterval(secTimer);
+}, [])
 
   return (
     <main className={styles.main}>
       <div className={styles.description}>
-          {isDesktop ? 
+          {!isDesktop ? 
           <div className={styles.descriptionBar}>
             <p>Coming Soon. Stay Tuned.</p>
           </div> : 
@@ -28,7 +46,14 @@ export default function Home() {
           </div>
           }
 
-          {isDesktop ? 
+          {showDyland ? 
+          <div className={styles.descriptionBar} style={{background:"black"}}>
+            {dylandElement}
+          </div> : 
+          <div />
+          }
+
+          {!isDesktop ? 
           <div style={{ display:"flex", fontSize:"18px" }}>
           <a
             href="#"
@@ -66,7 +91,7 @@ export default function Home() {
             <a href="#" rel="noopener noreferrer" className={styles.descriptionDeskIcon}><IonIcon icon={volumeHigh} /></a>
             <a href="#" rel="noopener noreferrer" className={styles.descriptionDeskIcon}><IonIcon icon={chevronDownOutline} /></a>
             <a href="#" rel="noopener noreferrer" className={styles.descriptionDeskIcon}><p style={{fontSize:"18px"}}>100%</p><IonIcon icon={batteryChargingOutline} /></a>
-            <a href="#" rel="noopener noreferrer">Mon 1 Jan 0:00AM</a>
+            <a href="#" rel="noopener noreferrer">{clock}</a>
           </div>
           }
         
