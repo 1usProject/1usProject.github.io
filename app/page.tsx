@@ -5,8 +5,8 @@ import styles from "./page.module.css";
 import { useState, useEffect, Fragment, MouseEvent } from "react";
 import { getPreferredColorScheme, applyPreferredColorScheme, toggleColorScheme } from './theme.js';
 import { IonIcon } from "@ionic/react";
-import { Popover, MenuList, MenuItem, ListItemIcon, ListItemText, Typography, Divider } from '@mui/material';
-import { logoGithub, logoTwitter, logoDiscord, logoInstagram, batteryChargingOutline, chevronDownOutline, volumeHigh, bluetooth, wifi, phonePortraitOutline } from  "ionicons/icons";
+import { Popover, MenuList, MenuItem, ListItemIcon, ListItemText, Typography, Divider, Slider } from '@mui/material';
+import { logoGithub, logoTwitter, logoDiscord, logoInstagram, batteryChargingOutline, chevronDownOutline, volumeHigh, bluetooth, wifi, phonePortraitOutline, toggle, volumeMute, flash, batteryFull, leaf } from  "ionicons/icons";
 
 export default function Home() {
 
@@ -65,18 +65,52 @@ const [topbarmenu, setTopBarMenu] = useState(<MenuList className={styles.descrip
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}>System Settings</ListItemText>
                 <Typography variant="body2">
-                  ⌘R
+                  ⌘Alt + S
                 </Typography>
               </MenuItem>
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Activity Monitor</ListItemText>
+                <Typography variant="body2">
+                  ⌘Alt + Del
+                </Typography>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Disk Utility</ListItemText>
+                <Typography variant="body2">
+                  ⌘Alt + D
+                </Typography>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Terminal</ListItemText>
+                <Typography variant="body2">
+                  ⌘Alt + T
+                </Typography>
+              </MenuItem>
+              <Divider />
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}>Shut Down</ListItemText>
                 <Typography variant="body2">
-                  ⌘S
+                  ⌘Ctrl + Alt + S
+                </Typography>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Sleep</ListItemText>
+                <Typography variant="body2">
+                  ⌘Ctrl + Alt + H
+                </Typography>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Reboot</ListItemText>
+                <Typography variant="body2">
+                  ⌘Ctrl + Alt + R
                 </Typography>
               </MenuItem>
               <Divider />
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}>Logout User</ListItemText>
+                <Typography variant="body2">
+                  ⌘Ctrl + Alt + L
+                </Typography>
               </MenuItem>
             </MenuList>); 
             handleMenuClick(event);}}
@@ -96,50 +130,50 @@ const [topbarmenu, setTopBarMenu] = useState(<MenuList className={styles.descrip
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}>New File</ListItemText>
                 <Typography variant="body2">
-                  ⌘N
+                  ⌘Ctrl + N
                 </Typography>
               </MenuItem>
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}>New Folder</ListItemText>
                 <Typography variant="body2">
-                  ⌘W
+                  ⌘Ctrl + W
                 </Typography>
               </MenuItem>
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}>Open</ListItemText>
                 <Typography variant="body2">
-                  ⌘O
+                  ⌘Ctrl + O
                 </Typography>
               </MenuItem>
               <Divider />
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}>Rename</ListItemText>
                 <Typography variant="body2">
-                  ⌘R
+                  ⌘Ctrl + Alt + R
                 </Typography>
               </MenuItem>
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}>Compress</ListItemText>
                 <Typography variant="body2">
-                  ⌘Z
+                  ⌘Ctrl + Alt + Z
                 </Typography>
               </MenuItem>
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}>Find</ListItemText>
                 <Typography variant="body2">
-                  ⌘F
+                  ⌘Ctrl + Alt + F
                 </Typography>
               </MenuItem>
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}>Share</ListItemText>
                 <Typography variant="body2">
-                  ⌘S
+                  ⌘Ctrl + Shift + S
                 </Typography>
               </MenuItem>
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}>Get Info</ListItemText>
                 <Typography variant="body2">
-                  ⌘I
+                  ⌘Ctrl + Shift + I
                 </Typography>
               </MenuItem>
             </MenuList>); 
@@ -151,6 +185,9 @@ const [topbarmenu, setTopBarMenu] = useState(<MenuList className={styles.descrip
               setTopBarMenu(<MenuList className={styles.descriptionMenu}>
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}>Undo</ListItemText>
+                <Typography variant="body2">
+                  ⌘Ctrl + Z
+                </Typography>
               </MenuItem>
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}>Redo</ListItemText>
@@ -159,33 +196,39 @@ const [topbarmenu, setTopBarMenu] = useState(<MenuList className={styles.descrip
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}>Copy</ListItemText>
                 <Typography variant="body2">
-                  ⌘C
+                  ⌘Ctrl + C
                 </Typography>
               </MenuItem>
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}>Cut</ListItemText>
                 <Typography variant="body2">
-                  ⌘X
+                  ⌘Ctrl + X
                 </Typography>
               </MenuItem>
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}>Paste</ListItemText>
                 <Typography variant="body2">
-                  ⌘V
+                  ⌘Ctrl + V
                 </Typography>
               </MenuItem>
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}>Select All</ListItemText>
                 <Typography variant="body2">
-                  ⌘A
+                  ⌘Ctrl + A
                 </Typography>
               </MenuItem>
               <Divider />
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}>Show Clipboard</ListItemText>
+                <Typography variant="body2">
+                  ⌘Ctrl + Shift + C
+                </Typography>
               </MenuItem>
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}>AutoFill</ListItemText>
+                <Typography variant="body2">
+                  ⌘Ctrl + Shift + A
+                </Typography>
               </MenuItem>
             </MenuList>); 
             handleMenuClick(event);}} rel="noopener noreferrer">Edit</a>
@@ -223,9 +266,15 @@ const [topbarmenu, setTopBarMenu] = useState(<MenuList className={styles.descrip
               <Divider />
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}>Show View Options</ListItemText>
+                <Typography variant="body2">
+                  ⌘Ctrl + Alt + V
+                </Typography>
               </MenuItem>
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}>Full Screen Mode</ListItemText>
+                <Typography variant="body2">
+                  ⌘F12
+                </Typography>
               </MenuItem>
             </MenuList>); 
             handleMenuClick(event);}} rel="noopener noreferrer">View</a>
@@ -236,9 +285,15 @@ const [topbarmenu, setTopBarMenu] = useState(<MenuList className={styles.descrip
               setTopBarMenu(<MenuList className={styles.descriptionMenu}>
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}>Back</ListItemText>
+                <Typography variant="body2">
+                  ⌘Ctrl & Shift & -
+                </Typography>
               </MenuItem>
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}>Forward</ListItemText>
+                <Typography variant="body2">
+                  ⌘Ctrl & Shift & +
+                </Typography>
               </MenuItem>
               <Divider />
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
@@ -276,57 +331,57 @@ const [topbarmenu, setTopBarMenu] = useState(<MenuList className={styles.descrip
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}>Minimize window</ListItemText>
                 <Typography variant="body2">
-                  ⌘M
+                  ⌘Ctrl + M
                 </Typography>
               </MenuItem>
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}>Resize window</ListItemText>
                 <Typography variant="body2">
-                  ⌘R
+                  ⌘Ctrl + R
                 </Typography>
               </MenuItem>
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}>Maximize window</ListItemText>
                 <Typography variant="body2">
-                  ⌘M + X
+                  ⌘Ctrl + Alt + M
                 </Typography>
               </MenuItem>
               <Divider />
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}>Tile window to left</ListItemText>
                 <Typography variant="body2">
-                  ⌘T + L
+                  ⌘Alt + L
                 </Typography>
               </MenuItem>
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}>Tile window to center</ListItemText>
                 <Typography variant="body2">
-                  ⌘T + C
+                  ⌘Alt + C
                 </Typography>
               </MenuItem>
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}>Tile window to right</ListItemText>
                 <Typography variant="body2">
-                  ⌘T + R
+                  ⌘Alt + R
                 </Typography>
               </MenuItem>
               <Divider />
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}>Move to Display 2</ListItemText>
                 <Typography variant="body2">
-                  ⌘D + Up
+                  ⌘Alt + Up
                 </Typography>
               </MenuItem>
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}>Close window</ListItemText>
                 <Typography variant="body2">
-                  ⌘Q
+                  ⌘Ctrl + Q
                 </Typography>
               </MenuItem>
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}>Bring to front</ListItemText>
                 <Typography variant="body2">
-                  ⌘F
+                  ⌘Ctrl + F
                 </Typography>
               </MenuItem>
             </MenuList>); 
@@ -342,13 +397,13 @@ const [topbarmenu, setTopBarMenu] = useState(<MenuList className={styles.descrip
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}>Community</ListItemText>
                 <Typography variant="body2">
-                  ⌘R
+                  ⌘Ctrl + Shift + C
                 </Typography>
               </MenuItem>
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}>Documentation</ListItemText>
                 <Typography variant="body2">
-                  ⌘S
+                  ⌘Ctrl + Shift + D
                 </Typography>
               </MenuItem>
               <Divider />
@@ -405,7 +460,7 @@ const [topbarmenu, setTopBarMenu] = useState(<MenuList className={styles.descrip
             aria-expanded={menuopen ? 'true' : undefined}
             onClick={(event) => {
               setTopBarMenu(<MenuList className={styles.descriptionMenu}>
-              <ListItemText className={styles.descriptionMenuTitle}>WiFi</ListItemText>
+              <ListItemText className={styles.descriptionMenuTitle}>WiFi<IonIcon icon={toggle} style={{float:"right",paddingRight:"1.5rem",fontSize:"36px"}} /></ListItemText>
               <Divider />
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}><IonIcon icon={wifi} /><p style={{display:"unset",fontSize: ".75rem"}}>7 </p>ASUS Mesh</ListItemText>
@@ -418,6 +473,10 @@ const [topbarmenu, setTopBarMenu] = useState(<MenuList className={styles.descrip
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}><IonIcon icon={wifi} /><p style={{display:"unset",fontSize: ".75rem"}}>4 </p>Marcus's iPhone</ListItemText>
                 <Typography variant="body2">WPA2/2.4GHz</Typography>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}><IonIcon icon={wifi} /><p style={{display:"unset",fontSize: ".75rem"}}>6E </p>Starlink WiFi</ListItemText>
+                <Typography variant="body2">WPA3/6GHz</Typography>
               </MenuItem>
               <Divider />
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
@@ -433,11 +492,11 @@ const [topbarmenu, setTopBarMenu] = useState(<MenuList className={styles.descrip
             aria-expanded={menuopen ? 'true' : undefined}
             onClick={(event) => {
               setTopBarMenu(<MenuList className={styles.descriptionMenu}>
-              <ListItemText className={styles.descriptionMenuTitle}>Bluetooth</ListItemText>
+              <ListItemText className={styles.descriptionMenuTitle}>Bluetooth<IonIcon icon={toggle} style={{float:"right",paddingRight:"1.5rem",fontSize:"36px"}} /></ListItemText>
               <Divider />
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}><IonIcon icon={bluetooth} /> Keychron K4</ListItemText>
-                <Typography variant="body2">100%<IonIcon icon={batteryChargingOutline} /></Typography>
+                <Typography variant="body2">100%<IonIcon icon={batteryChargingOutline} style={{fontSize:"18px"}} /></Typography>
               </MenuItem>
               <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
                 <ListItemText className={styles.descriptionMenuText}><IonIcon icon={volumeHigh} /> Airpods Max - Find My</ListItemText>
@@ -451,9 +510,70 @@ const [topbarmenu, setTopBarMenu] = useState(<MenuList className={styles.descrip
               </MenuItem>
             </MenuList>); 
             handleMenuClick(event);}} rel="noopener noreferrer" className={styles.descriptionDeskIcon}><IonIcon icon={bluetooth} /></a>
-            <a href="#" rel="noopener noreferrer" className={styles.descriptionDeskIcon}><IonIcon icon={volumeHigh} /></a>
+            <a aria-controls={menuopen ? 'basic-menu' : undefined}
+            aria-haspopup="true"
+            aria-expanded={menuopen ? 'true' : undefined}
+            onClick={(event) => {
+              setTopBarMenu(<MenuList className={styles.descriptionMenu}>
+              <ListItemText className={styles.descriptionMenuTitle}>Sound<IonIcon icon={volumeHigh} style={{float:"right",paddingRight:"1.5rem",fontSize:"36px"}} /></ListItemText>
+              <Slider valueLabelDisplay="auto" defaultValue={30} step={5} marks min={10} max={100} style={{margin:"0 1.5rem",maxWidth:"-webkit-fill-available"}} disabled />
+              <Divider />
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}><IonIcon icon={volumeMute} /> No Audio Device</ListItemText>
+              </MenuItem>
+              <Divider />
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Manage Sound Settings</ListItemText>
+              </MenuItem>
+            </MenuList>); 
+            handleMenuClick(event);}} rel="noopener noreferrer" className={styles.descriptionDeskIcon}><IonIcon icon={volumeHigh} /></a>
             <a onClick={toggleColorScheme} rel="noopener noreferrer" className={styles.descriptionDeskIcon}><IonIcon icon={chevronDownOutline} /></a>
-            <a href="#" rel="noopener noreferrer" className={styles.descriptionDeskIcon}><p style={{fontSize:"18px"}}>100%</p><IonIcon icon={batteryChargingOutline} /></a>
+            <a aria-controls={menuopen ? 'basic-menu' : undefined}
+            aria-haspopup="true"
+            aria-expanded={menuopen ? 'true' : undefined}
+            onClick={(event) => {
+              setTopBarMenu(<MenuList className={styles.descriptionMenu}>
+              <ListItemText className={styles.descriptionMenuTitle}>Power<IonIcon icon={flash} style={{float:"right",paddingRight:"1.5rem",fontSize:"36px"}} /></ListItemText>
+              <Divider />
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>
+                  <Typography variant="body2">Battery</Typography>
+                  <IonIcon icon={batteryFull} style={{paddingTop:".5rem",fontSize:"48px"}}/>
+                </ListItemText>
+                <ListItemText className={styles.descriptionMenuText} style={{minWidth:"160px"}}>
+                <Typography variant="body2">Fully Charged</Typography>
+                  <p style={{fontSize:"28px"}}>100%</p>
+                  <Typography variant="body2">Healthy (16 Cycles)</Typography>
+                </ListItemText>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>
+                  <Typography variant="body2">Adapter</Typography>
+                  <IonIcon icon={flash} style={{paddingTop:".5rem",fontSize:"48px"}}/>
+                </ListItemText>
+                <ListItemText className={styles.descriptionMenuText} style={{minWidth:"160px"}}>
+                <Typography variant="body2">Idle</Typography>
+                  <p style={{fontSize:"28px"}}>100W</p>
+                  <Typography variant="body2">USB PD/PPS (20V)</Typography>
+                </ListItemText>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>
+                  <Typography variant="body2">Energy</Typography>
+                  <IonIcon icon={leaf} style={{paddingTop:".5rem",fontSize:"48px"}}/>
+                </ListItemText>
+                <ListItemText className={styles.descriptionMenuText} style={{minWidth:"160px"}}>
+                <Typography variant="body2">Power Saving Mode</Typography>
+                  <p style={{fontSize:"28px"}}>14h 31m</p>
+                  <Typography variant="body2">Estimated Remaining</Typography>
+                </ListItemText>
+              </MenuItem>
+              <Divider />
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Manage Power Settings</ListItemText>
+              </MenuItem>
+            </MenuList>); 
+            handleMenuClick(event);}} rel="noopener noreferrer" className={styles.descriptionDeskIcon}><p style={{fontSize:"18px"}}>100%</p><IonIcon icon={batteryChargingOutline} /></a>
             <a href="#" rel="noopener noreferrer">{clock}</a>
           </div>
           }
