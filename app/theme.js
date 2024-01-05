@@ -1,4 +1,6 @@
 // theme.js
+// https://stackoverflow.com/questions/56300132/how-to-override-css-prefers-color-scheme-setting
+
 export function getPreferredColorScheme() {
     let systemScheme = 'light';
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {

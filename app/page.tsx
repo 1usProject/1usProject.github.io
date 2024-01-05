@@ -43,6 +43,8 @@ useEffect(() => {
   applyPreferredColorScheme(getPreferredColorScheme());
 }, []);
 
+const [topbarmenu, setTopBarMenu] = useState(<MenuList className={styles.descriptionMenu} />);
+
   return (
     <main className={styles.main}>
       <div className={styles.description}>
@@ -55,19 +57,311 @@ useEffect(() => {
             aria-controls={menuopen ? 'basic-menu' : undefined}
             aria-haspopup="true"
             aria-expanded={menuopen ? 'true' : undefined}
-            onClick={handleMenuClick}
+            onClick={(event) => {
+              setTopBarMenu(<MenuList className={styles.descriptionMenu}>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>About 1us</ListItemText>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>System Settings</ListItemText>
+                <Typography variant="body2">
+                  ⌘R
+                </Typography>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Shut Down</ListItemText>
+                <Typography variant="body2">
+                  ⌘S
+                </Typography>
+              </MenuItem>
+              <Divider />
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Logout User</ListItemText>
+              </MenuItem>
+            </MenuList>); 
+            handleMenuClick(event);}}
             rel="noopener noreferrer">1us</a>
-            <a href="#" rel="noopener noreferrer">File</a>
-            <a href="#" rel="noopener noreferrer">Edit</a>
-            <a href="#" rel="noopener noreferrer">View</a>
-            <a href="#" rel="noopener noreferrer">Go</a>
-            <a href="#" rel="noopener noreferrer">Window</a>
-            <a href="#" rel="noopener noreferrer">Help</a>
+            <a aria-controls={menuopen ? 'basic-menu' : undefined}
+            aria-haspopup="true"
+            aria-expanded={menuopen ? 'true' : undefined}
+            onClick={(event) => {
+              setTopBarMenu(<MenuList className={styles.descriptionMenu}>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>New Window</ListItemText>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>New Tab</ListItemText>
+              </MenuItem>
+              <Divider />
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>New File</ListItemText>
+                <Typography variant="body2">
+                  ⌘N
+                </Typography>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>New Folder</ListItemText>
+                <Typography variant="body2">
+                  ⌘W
+                </Typography>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Open</ListItemText>
+                <Typography variant="body2">
+                  ⌘O
+                </Typography>
+              </MenuItem>
+              <Divider />
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Rename</ListItemText>
+                <Typography variant="body2">
+                  ⌘R
+                </Typography>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Compress</ListItemText>
+                <Typography variant="body2">
+                  ⌘Z
+                </Typography>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Find</ListItemText>
+                <Typography variant="body2">
+                  ⌘F
+                </Typography>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Share</ListItemText>
+                <Typography variant="body2">
+                  ⌘S
+                </Typography>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Get Info</ListItemText>
+                <Typography variant="body2">
+                  ⌘I
+                </Typography>
+              </MenuItem>
+            </MenuList>); 
+            handleMenuClick(event);}} rel="noopener noreferrer">File</a>
+            <a aria-controls={menuopen ? 'basic-menu' : undefined}
+            aria-haspopup="true"
+            aria-expanded={menuopen ? 'true' : undefined}
+            onClick={(event) => {
+              setTopBarMenu(<MenuList className={styles.descriptionMenu}>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Undo</ListItemText>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Redo</ListItemText>
+              </MenuItem>
+              <Divider />
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Copy</ListItemText>
+                <Typography variant="body2">
+                  ⌘C
+                </Typography>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Cut</ListItemText>
+                <Typography variant="body2">
+                  ⌘X
+                </Typography>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Paste</ListItemText>
+                <Typography variant="body2">
+                  ⌘V
+                </Typography>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Select All</ListItemText>
+                <Typography variant="body2">
+                  ⌘A
+                </Typography>
+              </MenuItem>
+              <Divider />
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Show Clipboard</ListItemText>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>AutoFill</ListItemText>
+              </MenuItem>
+            </MenuList>); 
+            handleMenuClick(event);}} rel="noopener noreferrer">Edit</a>
+            <a aria-controls={menuopen ? 'basic-menu' : undefined}
+            aria-haspopup="true"
+            aria-expanded={menuopen ? 'true' : undefined}
+            onClick={(event) => {
+              setTopBarMenu(<MenuList className={styles.descriptionMenu}>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>as Icons</ListItemText>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>as Gallary</ListItemText>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>as List</ListItemText>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>as Columns</ListItemText>
+              </MenuItem>
+              <Divider />
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Sort by</ListItemText>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Clean up</ListItemText>
+              </MenuItem>
+              <Divider />
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Hide Tab Bar</ListItemText>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Show All Tabs</ListItemText>
+              </MenuItem>
+              <Divider />
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Show View Options</ListItemText>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Full Screen Mode</ListItemText>
+              </MenuItem>
+            </MenuList>); 
+            handleMenuClick(event);}} rel="noopener noreferrer">View</a>
+            <a aria-controls={menuopen ? 'basic-menu' : undefined}
+            aria-haspopup="true"
+            aria-expanded={menuopen ? 'true' : undefined}
+            onClick={(event) => {
+              setTopBarMenu(<MenuList className={styles.descriptionMenu}>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Back</ListItemText>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Forward</ListItemText>
+              </MenuItem>
+              <Divider />
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Recents</ListItemText>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Home</ListItemText>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Documents</ListItemText>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Desktop</ListItemText>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Network</ListItemText>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>1usShare</ListItemText>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>1usCloud</ListItemText>
+              </MenuItem>
+              <Divider />
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Connect to Network Server</ListItemText>
+              </MenuItem>
+            </MenuList>); 
+            handleMenuClick(event);}} rel="noopener noreferrer">Go</a>
+            <a aria-controls={menuopen ? 'basic-menu' : undefined}
+            aria-haspopup="true"
+            aria-expanded={menuopen ? 'true' : undefined}
+            onClick={(event) => {
+              setTopBarMenu(<MenuList className={styles.descriptionMenu}>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Minimize window</ListItemText>
+                <Typography variant="body2">
+                  ⌘M
+                </Typography>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Resize window</ListItemText>
+                <Typography variant="body2">
+                  ⌘R
+                </Typography>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Maximize window</ListItemText>
+                <Typography variant="body2">
+                  ⌘M + X
+                </Typography>
+              </MenuItem>
+              <Divider />
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Tile window to left</ListItemText>
+                <Typography variant="body2">
+                  ⌘T + L
+                </Typography>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Tile window to center</ListItemText>
+                <Typography variant="body2">
+                  ⌘T + C
+                </Typography>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Tile window to right</ListItemText>
+                <Typography variant="body2">
+                  ⌘T + R
+                </Typography>
+              </MenuItem>
+              <Divider />
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Move to Display 2</ListItemText>
+                <Typography variant="body2">
+                  ⌘D + Up
+                </Typography>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Close window</ListItemText>
+                <Typography variant="body2">
+                  ⌘Q
+                </Typography>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Bring to front</ListItemText>
+                <Typography variant="body2">
+                  ⌘F
+                </Typography>
+              </MenuItem>
+            </MenuList>); 
+            handleMenuClick(event);}} rel="noopener noreferrer">Window</a>
+            <a aria-controls={menuopen ? 'basic-menu' : undefined}
+            aria-haspopup="true"
+            aria-expanded={menuopen ? 'true' : undefined}
+            onClick={(event) => {
+              setTopBarMenu(<MenuList className={styles.descriptionMenu}>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>About 1us</ListItemText>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Community</ListItemText>
+                <Typography variant="body2">
+                  ⌘R
+                </Typography>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Documentation</ListItemText>
+                <Typography variant="body2">
+                  ⌘S
+                </Typography>
+              </MenuItem>
+              <Divider />
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Official Website</ListItemText>
+              </MenuItem>
+            </MenuList>); 
+            handleMenuClick(event);}} rel="noopener noreferrer">Help</a>
           </div>
           }
 
           {showDyland ? 
-          <div className={styles.descriptionBar} style={{background:"black"}}>
+          <div className={styles.dyLand}>
             {dylandElement}
           </div> : 
           <div />
@@ -106,7 +400,34 @@ useEffect(() => {
           </a>
           </div> : 
           <div className={styles.descriptionDesk}>
-            <a href="#" rel="noopener noreferrer" className={styles.descriptionDeskIcon}><IonIcon icon={wifi} /></a>
+            <a aria-controls={menuopen ? 'basic-menu' : undefined}
+            aria-haspopup="true"
+            aria-expanded={menuopen ? 'true' : undefined}
+            onClick={(event) => {
+              setTopBarMenu(<MenuList className={styles.descriptionMenu}>
+              <ListItemText className={styles.descriptionMenuTitle}>WiFi</ListItemText>
+              <Divider />
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}><IonIcon icon={wifi} /><p style={{display:"unset",fontSize: ".75rem"}}>7 </p>ASUS Mesh</ListItemText>
+                <Typography variant="body2">WPA3/6GHz</Typography>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}><IonIcon icon={wifi} /><p style={{display:"unset",fontSize: ".75rem"}}>6 </p>Starbucks Free WiFi</ListItemText>
+                <Typography variant="body2">Public/5GHz</Typography>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}><IonIcon icon={wifi} /><p style={{display:"unset",fontSize: ".75rem"}}>4 </p>Marcus's iPhone</ListItemText>
+                <Typography variant="body2">WPA2/2.4GHz</Typography>
+              </MenuItem>
+              <Divider />
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}><IonIcon icon={wifi} />Other...</ListItemText>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Manage WiFi Settings</ListItemText>
+              </MenuItem>
+            </MenuList>); 
+            handleMenuClick(event);}} rel="noopener noreferrer" className={styles.descriptionDeskIcon}><IonIcon icon={wifi} /></a>
             <a href="#" rel="noopener noreferrer" className={styles.descriptionDeskIcon}><IonIcon icon={bluetooth} /></a>
             <a href="#" rel="noopener noreferrer" className={styles.descriptionDeskIcon}><IonIcon icon={volumeHigh} /></a>
             <a onClick={toggleColorScheme} rel="noopener noreferrer" className={styles.descriptionDeskIcon}><IonIcon icon={chevronDownOutline} /></a>
@@ -117,7 +438,7 @@ useEffect(() => {
 
 
       <Popover 
-      id="basic-menu"
+      id="topbar-menu"
       className={styles.descriptionMenuPopover}
       open={menuopen}
       anchorEl={anchorEl}
@@ -130,27 +451,7 @@ useEffect(() => {
        vertical: 'top',
        horizontal: 'left',
       }}>
-        <MenuList className={styles.descriptionMenu}>
-        <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
-          <ListItemText className={styles.descriptionMenuText}>About 1us</ListItemText>
-        </MenuItem>
-        <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
-          <ListItemText className={styles.descriptionMenuText}>System Settings</ListItemText>
-          <Typography variant="body2" color="white">
-            ⌘R
-          </Typography>
-        </MenuItem>
-        <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
-          <ListItemText className={styles.descriptionMenuText}>Shut Down</ListItemText>
-          <Typography variant="body2" color="white">
-            ⌘W
-          </Typography>
-        </MenuItem>
-        <Divider style={{margin: "0.5rem 0.5rem",background: "rgba(155,155,155,.5)"}} />
-        <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
-          <ListItemText className={styles.descriptionMenuText}>Logout User</ListItemText>
-        </MenuItem>
-      </MenuList>
+        {topbarmenu}
       </Popover>
         
       </div>
