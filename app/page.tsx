@@ -6,7 +6,7 @@ import { useState, useEffect, Fragment, MouseEvent } from "react";
 import { getPreferredColorScheme, applyPreferredColorScheme, toggleColorScheme } from './theme.js';
 import { IonIcon } from "@ionic/react";
 import { Popover, MenuList, MenuItem, ListItemIcon, ListItemText, Typography, Divider } from '@mui/material';
-import { logoGithub, logoTwitter, logoDiscord, logoInstagram, batteryChargingOutline, chevronDownOutline, volumeHigh, bluetooth, wifi } from  "ionicons/icons";
+import { logoGithub, logoTwitter, logoDiscord, logoInstagram, batteryChargingOutline, chevronDownOutline, volumeHigh, bluetooth, wifi, phonePortraitOutline } from  "ionicons/icons";
 
 export default function Home() {
 
@@ -428,7 +428,29 @@ const [topbarmenu, setTopBarMenu] = useState(<MenuList className={styles.descrip
               </MenuItem>
             </MenuList>); 
             handleMenuClick(event);}} rel="noopener noreferrer" className={styles.descriptionDeskIcon}><IonIcon icon={wifi} /></a>
-            <a href="#" rel="noopener noreferrer" className={styles.descriptionDeskIcon}><IonIcon icon={bluetooth} /></a>
+            <a aria-controls={menuopen ? 'basic-menu' : undefined}
+            aria-haspopup="true"
+            aria-expanded={menuopen ? 'true' : undefined}
+            onClick={(event) => {
+              setTopBarMenu(<MenuList className={styles.descriptionMenu}>
+              <ListItemText className={styles.descriptionMenuTitle}>Bluetooth</ListItemText>
+              <Divider />
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}><IonIcon icon={bluetooth} /> Keychron K4</ListItemText>
+                <Typography variant="body2">100%<IonIcon icon={batteryChargingOutline} /></Typography>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}><IonIcon icon={volumeHigh} /> Airpods Max - Find My</ListItemText>
+              </MenuItem>
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}><IonIcon icon={phonePortraitOutline} /> Marcus's iPhone</ListItemText>
+              </MenuItem>
+              <Divider />
+              <MenuItem className={styles.descriptionMenuItem} onClick={handleMenuClose}>
+                <ListItemText className={styles.descriptionMenuText}>Manage Bluetooth Settings</ListItemText>
+              </MenuItem>
+            </MenuList>); 
+            handleMenuClick(event);}} rel="noopener noreferrer" className={styles.descriptionDeskIcon}><IonIcon icon={bluetooth} /></a>
             <a href="#" rel="noopener noreferrer" className={styles.descriptionDeskIcon}><IonIcon icon={volumeHigh} /></a>
             <a onClick={toggleColorScheme} rel="noopener noreferrer" className={styles.descriptionDeskIcon}><IonIcon icon={chevronDownOutline} /></a>
             <a href="#" rel="noopener noreferrer" className={styles.descriptionDeskIcon}><p style={{fontSize:"18px"}}>100%</p><IonIcon icon={batteryChargingOutline} /></a>
