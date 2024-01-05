@@ -5,7 +5,7 @@ import styles from "./page.module.css";
 import { useState, useEffect, Fragment, MouseEvent } from "react";
 import { getPreferredColorScheme, applyPreferredColorScheme, toggleColorScheme } from './theme.js';
 import { IonIcon } from "@ionic/react";
-import { Popover, MenuList, MenuItem, ListItemIcon, ListItemText, Typography, Divider, Slider } from '@mui/material';
+import { Popover, MenuList, MenuItem, ListItemIcon, ListItemText, Typography, Divider, Slider, Tooltip } from '@mui/material';
 import { logoGithub, logoTwitter, logoDiscord, logoInstagram, batteryChargingOutline, chevronDownOutline, volumeHigh, bluetooth, wifi, phonePortraitOutline, toggle, volumeMute, flash, batteryFull, leaf } from  "ionicons/icons";
 
 export default function Home() {
@@ -610,66 +610,113 @@ const [topbarmenu, setTopBarMenu] = useState(<MenuList className={styles.descrip
       </div>
 
       <div className={styles.grid}>
-        <a
-          href="https://chatu.1us.ca"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Chatulus <span>-&gt;</span>
-          </h2>
-          <p>Customizable messaging platform you can trust.</p>
-        </a>
 
         <a
-          href="https://reactiveide.com"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            ReactiveIDE <span>-&gt;</span>
-          </h2>
-          <p>Next-generation IDE. More than just build apps.</p>
-        </a>
+          href="#start=org.1us.file"
+          className={styles.card} rel="noopener noreferrer">
+        <Tooltip title="File" placement="top">
+        <Image
+          className={styles.appIcon}
+          src="chatulus_icon.png"
+          alt="App Icon"
+          width={72}
+          height={72}
+          priority
+        /></Tooltip></a>
 
         <a
-          href="https://os.1us.ca"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            1usOS <span>-&gt;</span>
-          </h2>
-          <p>Customizable next-generation operating system. I use Arch btw.</p>
-        </a>
+          href="#start=org.1us.web"
+          className={styles.card} rel="noopener noreferrer">
+        <Tooltip title="Web" placement="top">
+        <Image
+          className={styles.appIcon}
+          src="chatulus_icon.png"
+          alt="App Icon"
+          width={72}
+          height={72}
+          priority
+        /></Tooltip></a>
 
         <a
-          href="https://os.1us.ca"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            1usAI <span>-&gt;</span>
-          </h2>
-          <p>Customizable next-generation AI and LLM (Language Model) APIs.</p>
-        </a>
+          href="#appurl=https://chatu.1us.ca"
+          className={styles.card} rel="noopener noreferrer">
+        <Tooltip title="Chatulus" placement="top">
+        <Image
+          className={styles.appIcon}
+          src="chatulus_icon.png"
+          alt="App Icon"
+          width={72}
+          height={72}
+          priority
+        /></Tooltip></a>
 
         <a
-          href="#"
-          className={styles.card}
-          rel="noopener noreferrer"
-        >
-          <h2>
-            What's Next? <span>-&gt;</span>
-          </h2>
-          <p>
-            Tell us your idea if you have an interesting project.
-          </p>
-        </a>
+          href="#appurl=https://reactiveide.com"
+          className={styles.card} rel="noopener noreferrer">
+        <Tooltip title="ReactiveIDE" placement="top">
+        <Image
+          className={styles.appIcon}
+          src="chatulus_icon.png"
+          alt="App Icon"
+          width={72}
+          height={72}
+          priority
+        /></Tooltip></a>
+
+        <a
+          href="#start=org.1us.ai"
+          className={styles.card} rel="noopener noreferrer">
+        <Tooltip title="1usAI" placement="top">
+        <Image
+          className={styles.appIcon}
+          src="chatulus_icon.png"
+          alt="App Icon"
+          width={72}
+          height={72}
+          priority
+        /></Tooltip></a>
+
+        <a
+          href="#start=org.1us.osinstaller"
+          className={styles.card} rel="noopener noreferrer">
+        <Tooltip title="Install 1usOS" placement="top">
+        <Image
+          className={styles.appIcon}
+          src="chatulus_icon.png"
+          alt="App Icon"
+          width={72}
+          height={72}
+          priority
+        /></Tooltip></a>
+
+        <Divider orientation="vertical" variant="middle" flexItem style={{margin:".25rem .5rem"}} />
+
+        <a
+          href="#start=org.1us"
+          className={styles.card} rel="noopener noreferrer">
+        <Tooltip title="1us" placement="top">
+        <Image
+          className={styles.appIcon}
+          src="1us.png"
+          alt="App Icon"
+          width={72}
+          height={72}
+          priority
+        /></Tooltip></a>
+
+        <a
+          href="#start=org.1us.applibrary"
+          className={styles.card} rel="noopener noreferrer">
+        <Tooltip title="App Library" placement="top">
+        <Image
+          className={styles.appIcon}
+          src="app_library_icon.png"
+          alt="App Icon"
+          width={72}
+          height={72}
+          priority
+        /></Tooltip></a>
+
       </div>
     </main>
   );
