@@ -617,7 +617,7 @@ const [topbarmenu, setTopBarMenu] = useState(<MenuList className={styles.descrip
         <Tooltip title="File" placement="top">
         <Image
           className={styles.appIcon}
-          src="chatulus_icon.png"
+          src="file_icon.png"
           alt="App Icon"
           width={72}
           height={72}
@@ -630,7 +630,7 @@ const [topbarmenu, setTopBarMenu] = useState(<MenuList className={styles.descrip
         <Tooltip title="Web" placement="top">
         <Image
           className={styles.appIcon}
-          src="chatulus_icon.png"
+          src="web_icon.png"
           alt="App Icon"
           width={72}
           height={72}
@@ -656,20 +656,7 @@ const [topbarmenu, setTopBarMenu] = useState(<MenuList className={styles.descrip
         <Tooltip title="ReactiveIDE" placement="top">
         <Image
           className={styles.appIcon}
-          src="chatulus_icon.png"
-          alt="App Icon"
-          width={72}
-          height={72}
-          priority
-        /></Tooltip></a>
-
-        <a
-          href="#start=org.1us.ai"
-          className={styles.card} rel="noopener noreferrer">
-        <Tooltip title="1usAI" placement="top">
-        <Image
-          className={styles.appIcon}
-          src="chatulus_icon.png"
+          src="reactiveide_icon.png"
           alt="App Icon"
           width={72}
           height={72}
@@ -682,7 +669,7 @@ const [topbarmenu, setTopBarMenu] = useState(<MenuList className={styles.descrip
         <Tooltip title="Install 1usOS" placement="top">
         <Image
           className={styles.appIcon}
-          src="chatulus_icon.png"
+          src="1usOS_icon.png"
           alt="App Icon"
           width={72}
           height={72}
