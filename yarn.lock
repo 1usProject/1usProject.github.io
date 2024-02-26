@@ -2,21 +2,21 @@
 # yarn lockfile v1
 
 
-"@ionic/core@7.6.1":
-  version "7.6.1"
-  resolved "https://registry.yarnpkg.com/@ionic/core/-/core-7.6.1.tgz#5f6ca84eb22e2dc9c9c008894e4eeac45bfe08ab"
-  integrity sha512-o4PSRxokfRB5H3E5DAM7xivG8XFXaXD3+U/tha0QKemiMSntqgPqy0FYX0pNEwIrV3llRzFbAGNqyvB1+BG97Q==
+"@ionic/core@7.7.3":
+  version "7.7.3"
+  resolved "https://registry.yarnpkg.com/@ionic/core/-/core-7.7.3.tgz#f2c4965fd70784f7ab35eedbe1ab9e6ddb21756e"
+  integrity sha512-DSv6DPuiLU2MXsgDAXKFJW5OXxT7EyPy2jcQf03RcWooWeFryy979mqotPw7BgUuWt/fVGuz2tl3peAJGSqmDQ==
   dependencies:
-    "@stencil/core" "^4.8.2"
-    ionicons "^7.2.1"
+    "@stencil/core" "^4.12.2"
+    ionicons "^7.2.2"
     tslib "^2.1.0"
 
-"@ionic/react@^7.6.1":
-  version "7.6.1"
-  resolved "https://registry.yarnpkg.com/@ionic/react/-/react-7.6.1.tgz#ae55fb9a39fb2a45b33ae3fdb74002c59ac14426"
-  integrity sha512-Gg6IezbyvMucgNgmCMFr5vrsh2kgB/5S9j/24L07wt4mCNBy5ZGrzHkq9NSmcgU7bj/qD1GzamjoqICLH2vEzw==
+"@ionic/react@^7.7.3":
+  version "7.7.3"
+  resolved "https://registry.yarnpkg.com/@ionic/react/-/react-7.7.3.tgz#76f2487fa9bb9e754fb3fd27522aa9d146b3da90"
+  integrity sha512-b8jLpqv4dZ9nB9zoxhe0KR1Wk9bWMQ3UXQcOPu20+zYrxExwPqpLJ93LI0bU4F7ellduMjsakvELY486FeRrXw==
   dependencies:
-    "@ionic/core" "7.6.1"
+    "@ionic/core" "7.7.3"
     ionicons "^7.0.0"
     tslib "*"
 
@@ -70,10 +70,15 @@
   resolved "https://registry.yarnpkg.com/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-14.0.4.tgz#e74892f1a9ccf41d3bf5979ad6d3d77c07b9cba1"
   integrity sha512-yEh2+R8qDlDCjxVpzOTEpBLQTEFAcP2A8fUFLaWNap9GitYKkKv1//y2S6XY6zsR4rCOPRpU7plYDR+az2n30A==
 
-"@stencil/core@^4.0.3", "@stencil/core@^4.8.2":
+"@stencil/core@^4.0.3":
   version "4.9.0"
   resolved "https://registry.yarnpkg.com/@stencil/core/-/core-4.9.0.tgz#f224813dde3a2b7f3cdccc5d39eaf777ad2d0ef2"
   integrity sha512-aWSkhBmk3yPwRAkUwBbzRwmdhb8hKiQ/JMr9m5jthpBZLjtppYbzz6PN2MhSMDfRp6K93eQw5WogSEH4HHuB6w==
+
+"@stencil/core@^4.12.2":
+  version "4.12.3"
+  resolved "https://registry.yarnpkg.com/@stencil/core/-/core-4.12.3.tgz#5cf5e857d3896278c7b45143f4e2207d20e3fd8c"
+  integrity sha512-9XkE9i2aXPlApMNeq3tbVHKx0eAfDc7QGyIl6t5NMuQFTOGL5Xd1soF38d+hCIDpUoUUtY7jXWg+iFrlrMzQhg==
 
 "@swc/helpers@0.5.2":
   version "0.5.2"
@@ -140,7 +145,7 @@ graceful-fs@^4.1.2, graceful-fs@^4.2.11:
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.11.tgz#4183e4e8bf08bb6e05bbb2f7d2e0c8f712ca40e3"
   integrity sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==
 
-ionicons@^7.0.0, ionicons@^7.2.1, ionicons@^7.2.2:
+ionicons@^7.0.0, ionicons@^7.2.2:
   version "7.2.2"
   resolved "https://registry.yarnpkg.com/ionicons/-/ionicons-7.2.2.tgz#b28140bd8e81ec4eea2d1ee78a5e7cfca9f14d3b"
   integrity sha512-I3iYIfc9Q9FRifWyFSwTAvbEABWlWY32i0sAVDDPGYnaIZVugkLCZFbEcrphW6ixVPg8tt1oLwalo/JJwbEqnA==
